@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+
 class HomePageTemp extends StatelessWidget {
 
+  final opciones = ['uno', 'dos', 'tres', 'cuatro', 'cinco'];
 
   @override
   Widget build(BuildContext context) {
@@ -10,20 +12,27 @@ class HomePageTemp extends StatelessWidget {
           title: Text('Componentes Tempo')
       ),
       body: ListView(
-        children: <Widget>[
-          ListTile(
-            title: Text('ListTile Title'),
-          ),
-          Divider(),
-          ListTile(
-            title: Text('ListTile Title'),
-          ),
-          Divider(),
-          ListTile(
-            title: Text('ListTile Title'),
-          ),
-        ],
+        children: _crearItems()
       ),
     );
+  }
+
+  List<Widget> _crearItems(){
+
+    List<Widget> lista = <Widget>[];
+
+    for(String opt in opciones){
+      final tempWidget = ListTile(
+        title: Text(opt),
+      );
+      lista..add(tempWidget)
+            ..add(Divider());
+    }
+
+    return lista;
+  }
+
+  List<Widget> _crearItemsCorta(){
+
   }
 }
