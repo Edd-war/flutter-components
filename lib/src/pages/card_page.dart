@@ -17,7 +17,25 @@ class CardPage extends StatelessWidget {
         children: <Widget>[
           _cardTipo1(),
           SizedBox(height: 30.0),
-          _cardTipo2()
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+
         ],
       ),
     );
@@ -25,6 +43,8 @@ class CardPage extends StatelessWidget {
 
   Widget _cardTipo1() {
     return Card(
+      elevation: 10.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -52,7 +72,11 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
-    return Card(
+    // return Card(
+    final card = Container(
+      // clipBehavior: Clip.antiAlias, ESTO SÓLO SI EN LA LÍNEA DE ARRIBA ES CARD
+      // elevation: 10.0,
+      // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       child: Column(
         children: <Widget>[
           FadeInImage(
@@ -66,6 +90,25 @@ class CardPage extends StatelessWidget {
           Container(padding: EdgeInsets.all(10.0), child: Text('No tengo idea que poner')),
         ]
       )
+    );
+
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30.0),
+        color: Colors.white,
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 10.0,
+            spreadRadius: 2.0,
+            offset: Offset(2.0, 10.0),
+          )
+        ]
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: card,
+      ),
     );
   }
 }
