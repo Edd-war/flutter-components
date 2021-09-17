@@ -1,3 +1,5 @@
+// import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,9 @@ class CardPage extends StatelessWidget {
         // padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 10.0),
         padding: EdgeInsets.all(20),
         children: <Widget>[
-          _cardTipo1()
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2()
         ],
       ),
     );
@@ -44,6 +48,24 @@ class CardPage extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+
+  Widget _cardTipo2() {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          FadeInImage(
+            image: NetworkImage('https://hdwallpaperim.com/wp-content/uploads/2017/08/22/386516-space-planet-universe-digital_art-landscape-space_art.jpg'),
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            fadeInDuration: Duration(milliseconds: 200),
+            height: 250.0,
+            fit: BoxFit.cover,
+          ),
+          // Image(image: NetworkImage('https://hdwallpaperim.com/wp-content/uploads/2017/08/22/386516-space-planet-universe-digital_art-landscape-space_art.jpg')),
+          Container(padding: EdgeInsets.all(10.0), child: Text('No tengo idea que poner')),
+        ]
+      )
     );
   }
 }
